@@ -48,7 +48,7 @@ export default function Main() {
     <Grid container spacing={0}>
     {projects.map(proj => {
       return(
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <ProjectCard {...proj} key={proj.id}/>
         </Grid>)})
     }
@@ -72,14 +72,12 @@ export default function Main() {
   const getUser = () => {
     fetch(`https://api.github.com/users/${field}`)
       .then(response => {
-        console.log(response.status); 
         if (response.status !== 200) {
           return
         }
         return response.json()
       })
       .then(out => {
-        console.log(out)
         if (out) {
           setUser(out)
           getProjects()
