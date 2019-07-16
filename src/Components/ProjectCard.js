@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(4)
+    margin: theme.spacing(2),
+    minHeight: 200 
   },
   title: {
     margin: theme.spacing(2)

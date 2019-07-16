@@ -44,7 +44,16 @@ export default function Main() {
   const [userCard, setUserCard] = useState([])
 
   useEffect(() => {
-    setProjCards(projects.map(proj => <ProjectCard {...proj} key={proj.id}/>))
+  setProjCards(
+    <Grid container spacing={0}>
+    {projects.map(proj => {
+      return(
+        <Grid item xs={4}>
+          <ProjectCard {...proj} key={proj.id}/>
+        </Grid>)})
+    }
+    </Grid>
+  )
     setUserCard(<UserCard {...user} key={user.id}/>)
   }, [projects, user]);
 
